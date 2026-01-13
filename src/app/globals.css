@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-950 text-neutral-50 antialiased;
+}
+
+/* SNAP SCROLL */
+main {
+  scroll-snap-type: y mandatory;
+}
+
+/* Each section snaps cleanly */
+.section {
+  scroll-snap-align: start;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+/* Prevent partial overlap */
+.section-inner {
+  width: 100%;
+}
+
+/* Selection */
+::selection {
+  background-color: rgba(45, 212, 191, 0.35);
+  color: #f9fafb;
+}
